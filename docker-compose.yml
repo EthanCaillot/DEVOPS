@@ -1,0 +1,25 @@
+version: '3.3'
+services:
+    simpleapp:
+      build:
+        ./simple-api-main/simple-api
+      networks:
+        - app-network
+      depends_on:
+        - database
+    database:
+      build:
+        ./TP1/DB
+      networks:
+        - app-network
+    httpserv:
+      build:
+        ./http_server
+      ports:
+        - 80:80
+      networks:
+        - app-network
+      depends_on:
+        - simpleapp
+networks:
+    app-network:

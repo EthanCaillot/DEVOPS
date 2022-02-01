@@ -1,0 +1,11 @@
+Backend api : Creer un network puis lancer la db sur ce network et enfin lancer l'app sur ce network. 
+
+docker network create app-network
+docker run -p 5432:5432 --network=app-network --name database ethancaillot/database
+docker run -p 8080:8080 --name simpleapp --network=app-network ethancaillot/simpleapp
+
+
+
+docker cp apache:/usr/local/apache2/conf/httpd.conf /fs03/share/users/e.caillot-gallois/home/Documents/S8/DEVOPS/http_server
+
+COPY httpd.conf /usr/local/apache2/conf/httpd.conf
