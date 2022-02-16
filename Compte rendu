@@ -9,3 +9,13 @@ docker run -p 8080:8080 --name simpleapp --network=app-network ethancaillot/simp
 docker cp apache:/usr/local/apache2/conf/httpd.conf /fs03/share/users/e.caillot-gallois/home/Documents/S8/DEVOPS/http_server
 
 COPY httpd.conf /usr/local/apache2/conf/httpd.conf
+
+1.2 - On a besoin d'un mutlistage afin de compiler et de build le java dans un premier temps 
+et ensuite une fois que ça compile bien de le lancer
+
+1.3 - docker-compose up -d pour lancer le docker compose, ca va donc lancer les 3 services dockers
+      docker-compose rm pour fermer
+1.4 - Le docker compose file va donc servir à lancer plusieurs conteur depuis le meme fichier et donc tous en meme temps
+
+2.1- Ce sont des librairies java qui nous permettent de lancer des containeurs dockers pour verifier que notre code s'execute bien 
+
